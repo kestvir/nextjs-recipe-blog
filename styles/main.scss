@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre&display=swap");
+@import "./base/globals";
+@import "./layout/grid";
+@import "./layout/navbar";
+@import "./layout/footer";
+@import "./pages/home";
+@import "./pages/post";
+
+#disqus_thread {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.goback {
+    text-align: left;
+    align-self: self-start;
+    cursor: pointer;
+}

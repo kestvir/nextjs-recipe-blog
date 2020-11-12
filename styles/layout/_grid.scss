@@ -1,0 +1,19 @@
+.container {
+    width: 90vw;
+    max-width: 1068px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 1.2rem;
+    column-gap: 1.2rem;
+}
+
+.gridWithSidebar {
+    display: grid;
+    grid-template-columns: 1fr 325px;
+    -webkit-column-gap: 3rem;
+    column-gap: 3rem;
+}

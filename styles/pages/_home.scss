@@ -1,0 +1,27 @@
+@import "../utilities/variables";
+
+.home {
+    ul {
+        list-style: none;
+        li {
+            text-align: center;
+        }
+    }
+    &__inner {
+        padding: 1.5rem 0;
+    }
+    &__recipeTitle {
+        color: $main-color;
+        font-size: $home-link-font-size;
+        transition: $link-transition;
+
+        &:hover {
+            color: $light-main-color;
+        }
+    }
+    &__title {
+        border-bottom: 3px solid #eee;
+        margin-bottom: 2.2rem;
+        padding-bottom: 0.4rem;
+    }
+}

@@ -1,0 +1,25 @@
+@import "../utilities/variables";
+
+nav {
+    border-bottom: 1px solid #eee;
+    padding: 0.8rem 0;
+    ul {
+        list-style: none;
+    }
+}
+
+.nav-links-list {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0 0.55rem;
+    color: $main-color;
+    transition: $link-transition;
+
+    &:hover {
+        color: $light-main-color;
+    }
+}
