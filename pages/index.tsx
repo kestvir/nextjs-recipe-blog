@@ -5,39 +5,37 @@ import Sidebar from "../components/Sidebar";
 import HomeRecipes from "../components/HomeRecipes";
 
 export interface HomeProps {
-    postsData: ApiSearchResponse;
+  postsData: ApiSearchResponse;
 }
 
 export const getStaticProps = async (context) => {
-    const client = Client();
+  const client = Client();
 
-    const postsData = await client.query(
-        Prismic.Predicates.at("document.type", "blog_post"),
-        { orderings: "[my.blog_post.date desc]" }
-    );
+  const postsData = await client.query(
+    Prismic.Predicates.at("document.type", "blog_post"),
+    {
+      orderings: "[my.blog_post.first_publication_date desc]",
+      pageSize: 10,
+    }
+  );
 
-    console.log(postsData);
-    return {
-        revalidate: 10,
-        props: { postsData },
-    };
+  return {
+    revalidate: 10,
+    props: { postsData },
+  };
 };
 
 const Home: React.FC<HomeProps> = ({ postsData }) => {
+  console.log(postsData);
 
-    return (
-        <div className="home">
-            <div className="container">
-                <div className="home__inner">
-
-                </div>
-                <div className="gridWithSidebar">
-                    <HomeRecipes postsData={postsData} />
-                    <Sidebar />
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="home">
+      <div className="gridWithSidebar">
+        <HomeRecipes postsData={postsData} />
+        <Sidebar />
+      </div>
+    </div>
+  );
 };
 
 export default Home;

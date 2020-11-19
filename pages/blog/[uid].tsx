@@ -7,56 +7,48 @@ import PostContent from "../../components/PostContent";
 import Sidebar from "../../components/Sidebar";
 
 export interface Post {
-    post: PrismicDoc;
+  post: PrismicDoc;
 }
 
 export async function getStaticProps({ params }) {
-    console.log(params);
-    const post = (await Client().getByUID("blog_post", params.uid, {})) || {};
-    console.log(post);
-    return {
-        props: {
-            post,
-        },
-    };
+  const post = (await Client().getByUID("blog_post", params.uid, {})) || {};
+  return {
+    props: {
+      post,
+    },
+  };
 }
 
 export async function getStaticPaths() {
-    const documents = await queryRepeatableDocuments(
-        (doc) => doc.type === "blog_post"
-    );
-    return {
-        paths: documents.map((doc) => `/blog/${doc.uid}`),
-        fallback: true,
-    };
+  const documents = await queryRepeatableDocuments(
+    (doc) => doc.type === "blog_post"
+  );
+  return {
+    paths: documents.map((doc) => `/blog/${doc.uid}`),
+    fallback: true,
+  };
 }
 
 const Post: React.FC<Post> = ({ post }) => {
-    console.log(post);
+  const router = useRouter();
 
-    const router = useRouter();
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
 
-    if (router.isFallback) {
-        return <h1>Loading...</h1>;
-    }
-
-    return (
-        <div>
-            <div className="container">
-                <p className="goback">
-                    <Link href="/">
-                        <a>Go back</a>
-                    </Link>
-                </p>
-                <div className="gridWithSidebar">
-                    <PostContent post={post} />
-                    <Sidebar />
-                </div>
-
-            </div>
-        </div>
-
-    );
+  return (
+    <div className="post">
+      <p className="goback">
+        <Link href="/">
+          <a>Go back</a>
+        </Link>
+      </p>
+      <div className="gridWithSidebar">
+        <PostContent post={post} />
+        <Sidebar />
+      </div>
+    </div>
+  );
 };
 
 export default Post;

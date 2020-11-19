@@ -2,6 +2,8 @@ import Prismic from "prismic-javascript";
 
 const { API_ENDPOINT, ACCESS_TOKEN } = process.env;
 
+console.log(process)
+
 export const apiEndpoint = API_ENDPOINT;
 export const accessToken = ACCESS_TOKEN;
 
@@ -20,17 +22,4 @@ const createClientOptions = (req = null, prismicAccessToken = null) => {
   };
 };
 
-// export const linkResolver = (doc) => {
-//   if (doc.type === "blog_post") {
-//     return `/post/${doc.uid}`;
-//   }
-//   return "/";
-// };
 
-// // Additional helper function for Next/Link components
-// export const hrefResolver = (docType) => {
-//   if (docType === "blog_post") {
-//     return "/post/[uid]";
-//   }
-//   return "/";
-// };

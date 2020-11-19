@@ -1,25 +1,27 @@
-@import "../utilities/variables";
-
-nav {
-    border-bottom: 1px solid #eee;
-    padding: 0.8rem 0;
+.nav {
+    border-bottom: 1px solid $border-color;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48.59px;
+    }
     ul {
         list-style: none;
     }
-}
+    &__links-list {
+        display: flex;
+        justify-content: center;
+    }
 
-.nav-links-list {
-    display: flex;
-    justify-content: center;
-}
+    &__link {
+        font-size: 1rem;
+        padding: 0 0.55rem;
+        color: $main-color;
+        transition: $link-transition;
 
-.nav-link {
-    font-size: 1rem;
-    padding: 0 0.55rem;
-    color: $main-color;
-    transition: $link-transition;
-
-    &:hover {
-        color: $light-main-color;
+        &:hover {
+            color: $light-main-color;
+        }
     }
 }
