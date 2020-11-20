@@ -26,8 +26,6 @@ export const getStaticProps = async (context) => {
 };
 
 const Home: React.FC<HomeProps> = ({ postsData }) => {
-  console.log(postsData);
-
   return (
     <div className="home">
       <div className="gridWithSidebar">

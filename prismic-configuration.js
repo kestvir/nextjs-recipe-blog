@@ -1,10 +1,8 @@
 import Prismic from "prismic-javascript";
 
-const { API_ENDPOINT, ACCESS_TOKEN } = process.env;
+const { NEXT_PUBLIC_API_ENDPOINT, ACCESS_TOKEN } = process.env;
 
-console.log(process)
-
-export const apiEndpoint = API_ENDPOINT;
+export const apiEndpoint = NEXT_PUBLIC_API_ENDPOINT;
 export const accessToken = ACCESS_TOKEN;
 
 // Client method to query documents from the Prismic repo

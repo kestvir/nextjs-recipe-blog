@@ -1,39 +1,35 @@
-// import Image from "next/image";
-// import { RichText } from "prismic-reactjs";
-// import { useEffect, useState } from "react";
-// import { Document as PrismicDoc } from "prismic-javascript/types/documents";
-// import { Client } from "../../prismic-configuration";
+import Image from "next/image";
+import Prismic from "prismic-javascript";
+import { RichText } from "prismic-reactjs";
+import useSWR from "swr";
 
-// const Sidebar: React.FC = () => {
-//   const [sidebarData, setSidebarData] = useState<PrismicDoc | null>(null);
+const { NEXT_PUBLIC_API_ENDPOINT } = process.env;
 
-//   useEffect(() => {
-//     const fetchSidebarData = async () => {
-//       const client = Client();
-//       const sidebarDoc = await client.getSingle("sidebar", {});
-//       return {
-//         props: {
-//           sidebarDoc,
-//         },
-//       };
-//     };
+export const apiEndpoint = NEXT_PUBLIC_API_ENDPOINT;
 
-//     fetchSidebarData();
-//   }, [sidebarData]);
+const Sidebar: React.FC = () => {
+  const fetchSidebarData = async (apiEndpoint: string) => {
+    const client = Prismic.client(apiEndpoint);
+    const doc = await client.getSingle("sidebar", {});
+    console.log(doc);
+    return doc;
+  };
 
-//   console.log(sidebarData);
+  const { data, error } = useSWR(apiEndpoint, fetchSidebarData);
 
-//   return (
-//     <div className="sidebar">
-//       {/* <h2>{data.title[0].text}</h2>
-//       <Image
-//         src={data.sidebar_img.url}
-//         width={data.sidebar_img.dimensions.width}
-//         height={data.sidebar_img.dimensions.height}
-//       />
-//       <RichText render={data.sidebar_text_content} /> */}
-//     </div>
-//   );
-// };
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>{""}</div>;
 
-// export default Sidebar;
+  return (
+    <div className="sidebar">
+      <Image
+        src={data.data.sidebar_img.url}
+        width={data.data.sidebar_img.dimensions.width}
+        height={data.data.sidebar_img.dimensions.height}
+      />
+      <RichText render={data.data.sidebar_text_content} />
+    </div>
+  );
+};
+
+export default Sidebar;
