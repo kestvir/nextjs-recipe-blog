@@ -15,7 +15,7 @@ export interface CourseRecipesProps {
 
 export async function getStaticProps({ params }) {
   const client = Client();
-  //   params.course.charAt(0).toUpperCase() + params.course.slice(1);
+  const tag = params.course;
   const postsData = await client.query(
     Prismic.Predicates.at("document.tags", [params.course]),
     {
@@ -26,6 +26,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       postsData,
+      tag,
     },
   };
 }
@@ -40,25 +41,23 @@ export async function getStaticPaths() {
   };
 }
 
-const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData }) => {
+const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
   const router = useRouter();
+
+  let capitalizedCourse;
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;
+  } else {
+    capitalizedCourse = tag.charAt(0).toUpperCase() + tag.slice(1);
   }
   console.log(postsData);
-
-  // const { data } = postsData;
 
   return (
     <div className="course">
       <div className="gridWithSidebar">
         <div className="course-inner">
-          <h2>{postsData.page}</h2>
-
-          {/* <h2>{postsData.data.title[0].text}</h2> */}
-
-          {/* <h2 className="course__title">{tag} dishes: </h2>
+          <h2 className="course__title">{capitalizedCourse} dishes: </h2>
           <ul className="grid3">
             {postsData.results.map((post) => {
               return (
@@ -69,7 +68,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData }) => {
                 />
               );
             })}
-          </ul> */}
+          </ul>
         </div>
         <Sidebar />
       </div>
