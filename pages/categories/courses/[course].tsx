@@ -46,7 +46,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData }) => {
     return <h1>Loading...</h1>;
   }
 
-  const data = { postsData };
+  //   const { data } = postsData;
 
   return (
     <div className="course">
