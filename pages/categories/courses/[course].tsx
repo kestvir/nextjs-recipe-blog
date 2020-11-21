@@ -52,13 +52,13 @@ export interface CourseRecipesProps {
 }
 
 const CourseRecipes: React.FC<CourseRecipesProps> = ({ aboutDoc }) => {
-  const { data } = aboutDoc;
+  console.log(aboutDoc);
 
   return (
     <div className="course">
       <div className="gridWithSidebar">
         <div className="course-inner">
-          <h2>{data.title[0].text}</h2>
+          {/* <h2>{data.title[0].text}</h2> */}
 
           {/* <h2 className="course__title">{tag} dishes: </h2>
           <ul className="grid3">
