@@ -8,15 +8,17 @@ import RecipeListItem from "../../../components/RecipeListItem";
 
 export async function getStaticProps({ params }) {
   const client = Client();
-  const capitalizedTag =
-    params.course.charAt(0).toUpperCase() + params.course.slice(1);
+  params.course.charAt(0).toUpperCase() + params.course.slice(1);
   const postsData = await client.query(
     Prismic.Predicates.at("document.tags", [params.course])
   );
+
+  const tag = params.course;
+
   return {
     props: {
       postsData,
-      capitalizedTag,
+      tag,
     },
   };
 }
@@ -33,18 +35,15 @@ export async function getStaticPaths() {
 
 export interface CourseRecipesProps {
   postsData: ApiSearchResponse;
-  capitalizedTag: string;
+  tag: string;
 }
 
-const CourseRecipes: React.FC<CourseRecipesProps> = ({
-  postsData,
-  capitalizedTag,
-}) => {
+const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
   return (
     <div className="course">
       <div className="gridWithSidebar">
         <div className="course-inner">
-          <h2 className="course__title">{capitalizedTag} dishes: </h2>
+          <h2 className="course__title">{tag} dishes: </h2>
           <ul className="grid3">
             {postsData.results.map((post) => {
               return (
