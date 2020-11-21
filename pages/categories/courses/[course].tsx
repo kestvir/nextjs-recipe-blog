@@ -40,7 +40,6 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({
   postsData,
   capitalizedTag,
 }) => {
-  console.log(postsData);
   return (
     <div className="course">
       <div className="gridWithSidebar">
