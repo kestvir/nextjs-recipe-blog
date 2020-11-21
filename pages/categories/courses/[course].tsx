@@ -8,7 +8,7 @@ import RecipeListItem from "../../../components/RecipeListItem";
 
 export async function getStaticProps({ params }) {
   const client = Client();
-  params.course.charAt(0).toUpperCase() + params.course.slice(1);
+  //   params.course.charAt(0).toUpperCase() + params.course.slice(1);
   const postsData = await client.query(
     Prismic.Predicates.at("document.tags", [params.course])
   );
