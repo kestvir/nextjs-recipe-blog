@@ -11,11 +11,14 @@ const Sidebar: React.FC = () => {
   const fetchSidebarData = async (apiEndpoint: string) => {
     const client = Prismic.client(apiEndpoint);
     const doc = await client.getSingle("sidebar", {});
-    console.log(doc);
     return doc;
   };
 
   const { data, error } = useSWR(apiEndpoint, fetchSidebarData);
+
+  let sidebarData;
+
+  if (data) sidebarData = { ...data.data };
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>{""}</div>;
@@ -23,11 +26,11 @@ const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <Image
-        src={data.data.sidebar_img.url}
-        width={data.data.sidebar_img.dimensions.width}
-        height={data.data.sidebar_img.dimensions.height}
+        src={sidebarData.sidebar_img.url}
+        width={sidebarData.sidebar_img.dimensions.width}
+        height={sidebarData.sidebar_img.dimensions.height}
       />
-      <RichText render={data.data.sidebar_text_content} />
+      <RichText render={sidebarData.sidebar_text_content} />
     </div>
   );
 };

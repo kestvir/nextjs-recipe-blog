@@ -37,8 +37,6 @@ export async function getServerSideProps({ query }) {
 }
 
 const SearchResults: React.FC<SearchResults> = ({ postsData, searchValue }) => {
-  console.log(postsData);
-
   const router = useRouter();
 
   if (router.isFallback) {

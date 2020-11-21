@@ -8,7 +8,6 @@ export async function getStaticProps({ params }) {
   const client = Client();
 
   const aboutDoc = await client.getSingle("about", {});
-  console.log(aboutDoc);
   return {
     props: {
       aboutDoc,

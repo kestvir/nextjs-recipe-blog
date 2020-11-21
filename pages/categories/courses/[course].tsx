@@ -7,7 +7,6 @@ import Sidebar from "../../../components/Sidebar";
 import RecipeListItem from "../../../components/RecipeListItem";
 
 export async function getStaticProps({ params }) {
-  console.log(params);
   const client = Client();
   const capitalizedTag =
     params.course.charAt(0).toUpperCase() + params.course.slice(1);
@@ -41,7 +40,6 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({
   postsData,
   capitalizedTag,
 }) => {
-  console.log(postsData);
   return (
     <div className="course">
       <div className="gridWithSidebar">
