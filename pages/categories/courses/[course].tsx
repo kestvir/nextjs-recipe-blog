@@ -1,10 +1,22 @@
-// import Image from "next/image";
-// import Link from "next/link";
-// import Prismic from "prismic-javascript";
-// import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
-// import { Client } from "../../../prismic-configuration";
-// import Sidebar from "../../../components/Sidebar";
-// import RecipeListItem from "../../../components/RecipeListItem";
+import Image from "next/image";
+import Link from "next/link";
+import Prismic from "prismic-javascript";
+import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
+import { Client } from "../../../prismic-configuration";
+import Sidebar from "../../../components/Sidebar";
+import { Document as PrismicDoc } from "prismic-javascript/types/documents";
+import RecipeListItem from "../../../components/RecipeListItem";
+
+export async function getStaticProps({ params }) {
+  const client = Client();
+
+  const aboutDoc = await client.getSingle("about", {});
+  return {
+    props: {
+      aboutDoc,
+    },
+  };
+}
 
 // export async function getStaticProps({ params }) {
 //   const client = Client();
@@ -23,50 +35,48 @@
 //   };
 // }
 
-// export async function getStaticPaths() {
-//   // const documents = await queryRepeatableDocuments(
-//   //   (doc) => doc.type === "blog_post"
-//   // );
-//   return {
-//     paths: [],
-//     fallback: true,
-//   };
-// }
+export async function getStaticPaths() {
+  // const documents = await queryRepeatableDocuments(
+  //   (doc) => doc.type === "blog_post"
+  // );
+  return {
+    paths: [],
+    fallback: true,
+  };
+}
 
-// export interface CourseRecipesProps {
-//   postsData: ApiSearchResponse;
-//   tag: string;
-// }
+export interface CourseRecipesProps {
+  //   postsData: ApiSearchResponse;
+  //   tag: string;
+  aboutDoc: PrismicDoc;
+}
 
-// const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
-//   return (
-//     <div className="course">
-//       <div className="gridWithSidebar">
-//         <div className="course-inner">
-//           <h2 className="course__title">{tag} dishes: </h2>
-//           <ul className="grid3">
-//             {postsData.results.map((post) => {
-//               return (
-//                 <RecipeListItem
-//                   key={post.uid}
-//                   post={post}
-//                   linkClassName="course__recipeTitle"
-//                 />
-//               );
-//             })}
-//           </ul>
-//         </div>
-//         <Sidebar />
-//       </div>
-//     </div>
-//   );
-// };
+const CourseRecipes: React.FC<CourseRecipesProps> = ({ aboutDoc }) => {
+  const { data } = aboutDoc;
 
-// export default CourseRecipes;
-export interface CourseProps {}
+  return (
+    <div className="course">
+      <div className="gridWithSidebar">
+        <div className="course-inner">
+          <h2>{data.title[0].text}</h2>
 
-const Course: React.FC<CourseProps> = () => {
-  return <h1>Hello</h1>;
+          {/* <h2 className="course__title">{tag} dishes: </h2>
+          <ul className="grid3">
+            {postsData.results.map((post) => {
+              return (
+                <RecipeListItem
+                  key={post.uid}
+                  post={post}
+                  linkClassName="course__recipeTitle"
+                />
+              );
+            })}
+          </ul> */}
+        </div>
+        <Sidebar />
+      </div>
+    </div>
+  );
 };
 
-export default Course;
+export default CourseRecipes;
