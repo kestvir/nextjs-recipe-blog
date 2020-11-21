@@ -18,6 +18,7 @@ export interface CategoriesProps {
 }
 
 const Categories: React.FC<CategoriesProps> = ({ categories }) => {
+  console.log(categories);
   return (
     <div className="categories">
       <div className="gridWithSidebar">
@@ -35,7 +36,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories }) => {
                   />
                   <Link
                     href={`categories/courses/${encodeURIComponent(
-                      "hamburger"
+                      category.primary.custom_slug
                     )}`}
                   >
                     <a className="categories__recipeTitle">
