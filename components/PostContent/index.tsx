@@ -9,7 +9,7 @@ export interface PostContentProps {
   post: PrismicDoc;
 }
 
-const PostContent: React.SFC<PostContentProps> = ({ post }) => {
+const PostContent: React.FC<PostContentProps> = ({ post }) => {
   useEffect(() => {
     function loadComments() {
       (window as any).disqus_config = function () {

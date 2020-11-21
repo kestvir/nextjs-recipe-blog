@@ -11,9 +11,12 @@ export async function getStaticProps({ params }) {
   const client = Client();
   //   params.course.charAt(0).toUpperCase() + params.course.slice(1);
   const postsData =
-    (await client.query(
-      Prismic.Predicates.at("document.tags", [params.course])
-    )) || {};
+    (await Client().getByUID("blog_post", params.uid, {})) || {};
+  return {
+    props: {
+      postsData,
+    },
+  };
 
   const tag = params.course;
 
@@ -47,7 +50,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData }) => {
     return <h1>Loading...</h1>;
   }
 
-  //   const { data } = postsData;
+  // const { data } = postsData;
 
   return (
     <div className="course">
