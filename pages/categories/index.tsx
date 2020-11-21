@@ -35,7 +35,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories }) => {
                   />
                   <Link
                     href={`categories/courses/${encodeURIComponent(
-                      category.primary.custom_slug
+                      "hamburger"
                     )}`}
                   >
                     <a className="categories__recipeTitle">

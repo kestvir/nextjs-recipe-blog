@@ -11,19 +11,10 @@ export async function getStaticProps({ params }) {
   const client = Client();
   //   params.course.charAt(0).toUpperCase() + params.course.slice(1);
   const postsData =
-    (await Client().getByUID("blog_post", params.uid, {})) || {};
+    (await Client().getByUID("blog_post", params.course, {})) || {};
   return {
     props: {
       postsData,
-    },
-  };
-
-  const tag = params.course;
-
-  return {
-    props: {
-      postsData,
-      tag,
     },
   };
 }
@@ -49,6 +40,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData }) => {
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
+  console.log(postsData);
 
   // const { data } = postsData;
 
