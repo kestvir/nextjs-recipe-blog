@@ -40,6 +40,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({
   postsData,
   capitalizedTag,
 }) => {
+  console.log(postsData);
   return (
     <div className="course">
       <div className="gridWithSidebar">
@@ -49,6 +50,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({
             {postsData.results.map((post) => {
               return (
                 <RecipeListItem
+                  key={post.uid}
                   post={post}
                   linkClassName="course__recipeTitle"
                 />
