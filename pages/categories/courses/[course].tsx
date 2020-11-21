@@ -56,7 +56,7 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ aboutDoc }) => {
     <div className="course">
       <div className="gridWithSidebar">
         <div className="course-inner">
-          <h2>{aboutDoc.data.title[0].text}</h2>
+          {/* <h2>{aboutDoc.data.title[0].text}</h2> */}
 
           {/* <h2 className="course__title">{tag} dishes: </h2>
           <ul className="grid3">

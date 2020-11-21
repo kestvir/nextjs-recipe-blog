@@ -20,11 +20,11 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const documents = await queryRepeatableDocuments(
-    (doc) => doc.type === "blog_post"
-  );
+  //   const documents = await queryRepeatableDocuments(
+  //     (doc) => doc.type === "blog_post"
+  //   );
   return {
-    paths: documents.map((doc) => `/blog/${doc.uid}`),
+    paths: [],
     fallback: true,
   };
 }
