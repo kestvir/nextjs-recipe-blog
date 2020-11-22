@@ -11,7 +11,14 @@ export interface Post {
 }
 
 export async function getStaticProps({ params }) {
-  const post = (await Client().getByUID("blog_post", params.uid, {})) || {};
+  const post = await Client().getByUID("blog_post", params.uid, {});
+
+  if (!post) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       post,
@@ -20,9 +27,6 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  //   const documents = await queryRepeatableDocuments(
-  //     (doc) => doc.type === "blog_post"
-  //   );
   return {
     paths: [],
     fallback: true,

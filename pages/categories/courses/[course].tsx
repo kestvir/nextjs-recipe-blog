@@ -23,6 +23,13 @@ export async function getStaticProps({ params }) {
       pageSize: 12,
     }
   );
+
+  if (!postsData.results.length) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       postsData,
@@ -32,9 +39,6 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  // const documents = await queryRepeatableDocuments(
-  //   (doc) => doc.type === "blog_post"
-  // );
   return {
     paths: [],
     fallback: true,
@@ -46,12 +50,13 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
 
   let capitalizedCourse;
 
-  if (router.isFallback) {
-    return <h1>Loading...</h1>;
-  } else {
+  if (postsData && tag) {
     capitalizedCourse = tag.charAt(0).toUpperCase() + tag.slice(1);
   }
-  console.log(postsData);
+
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div className="course">
