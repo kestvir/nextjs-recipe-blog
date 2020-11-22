@@ -34,3 +34,9 @@
         }
     }
 }
+
+@media screen and (max-width: 450px) {
+    .searchbar {
+        display: none;
+    }
+}

@@ -24,4 +24,30 @@
             color: $light-main-color;
         }
     }
+    &__menuIcon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .nav {
+        background-color: $main-color;
+        &__inner {
+            justify-content: space-between;
+        }
+        ul {
+            display: none;
+        }
+        &__menuIcon,
+        &__searchIcon {
+            display: inline-block;
+            font-size: 1.3rem;
+            &:hover {
+                cursor: pointer;
+            }
+            path {
+                fill: #fff;
+            }
+        }
+    }
 }

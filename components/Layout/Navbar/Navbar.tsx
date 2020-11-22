@@ -1,13 +1,25 @@
+import { useState } from "react";
 import Link from "next/link";
-import SearchBar from "../SearchBar";
+import SearchBar from "../../SearchBar";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
+  const [displayMobileNav, setDisplayMobileNav] = useState(false);
+
   return (
     <nav className="nav">
       <div className="container">
         <div className="nav__inner">
+          <FontAwesomeIcon
+            onClick={() => setDisplayMobileNav(true)}
+            className="nav__menuIcon"
+            icon={faBars}
+          />
+          <FontAwesomeIcon className="nav__searchIcon" icon={faSearch} />
+
           <ul className="nav__links-list">
             <li>
               <Link href={"/"}>
