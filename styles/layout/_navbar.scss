@@ -9,7 +9,7 @@
     ul {
         list-style: none;
     }
-    &__links-list {
+    &__linksList {
         display: flex;
         justify-content: center;
     }
@@ -24,18 +24,19 @@
             color: $light-main-color;
         }
     }
-    &__menuIcon {
+    &__menuIcon,
+    &__searchIcon {
         display: none;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 476px) {
     .nav {
         background-color: $main-color;
         &__inner {
             justify-content: space-between;
         }
-        ul {
+        &__linksList {
             display: none;
         }
         &__menuIcon,

@@ -3,6 +3,8 @@ import Link from "next/link";
 import SearchBar from "../../SearchBar";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavLinks from "./NavLinks";
+import MobileNav from "./MobileNav";
 
 export interface NavbarProps {}
 
@@ -20,23 +22,15 @@ const Navbar: React.FC<NavbarProps> = () => {
           />
           <FontAwesomeIcon className="nav__searchIcon" icon={faSearch} />
 
-          <ul className="nav__links-list">
-            <li>
-              <Link href={"/"}>
-                <a className="nav__link">Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/categories"}>
-                <a className="nav__link">Recipes</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/about"}>
-                <a className="nav__link">About</a>
-              </Link>
-            </li>
+          <MobileNav
+            isOpen={displayMobileNav}
+            closeMobileNav={() => setDisplayMobileNav(false)}
+          />
+
+          <ul className="nav__linksList">
+            <NavLinks linkClassName="nav__link" />
           </ul>
+
           <SearchBar />
         </div>
       </div>
