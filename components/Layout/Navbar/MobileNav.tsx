@@ -1,4 +1,5 @@
 import NavLinks from "./NavLinks";
+import SearchBar from "../../SearchBar";
 
 export interface MobileNavProps {
   isOpen: boolean;
@@ -11,12 +12,16 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, closeMobileNav }) => {
       <button className="mobileNav__btn--close" onClick={closeMobileNav}>
         X
       </button>
-      <ul className="mobileNav__linksList">
-        <NavLinks
-          closeMobileNav={closeMobileNav}
-          linkClassName="mobileNav__link"
-        />
-      </ul>
+
+      <div className="mobileNav__inner">
+        <SearchBar closeMobileNav={closeMobileNav} />
+        <ul className="mobileNav__linksList">
+          <NavLinks
+            closeMobileNav={closeMobileNav}
+            linkClassName="mobileNav__link"
+          />
+        </ul>
+      </div>
     </div>
   );
 };

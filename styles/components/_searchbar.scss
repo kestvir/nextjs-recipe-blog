@@ -37,6 +37,12 @@
 
 @media screen and (max-width: 476px) {
     .searchbar {
-        display: none;
+        &__inputContainer {
+            border: none;
+        }
+
+        &__form {
+            background-color: #fff;
+        }
     }
 }

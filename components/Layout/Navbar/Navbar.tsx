@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import SearchBar from "../../SearchBar";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +19,6 @@ const Navbar: React.FC<NavbarProps> = () => {
             className="nav__menuIcon"
             icon={faBars}
           />
-          <FontAwesomeIcon className="nav__searchIcon" icon={faSearch} />
 
           <MobileNav
             isOpen={displayMobileNav}

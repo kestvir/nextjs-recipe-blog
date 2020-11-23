@@ -2,15 +2,18 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export interface SearchBarProps {}
+export interface SearchBarProps {
+  closeMobileNav?: () => void;
+}
 
-const SearchBar: React.FC<SearchBarProps> = () => {
+const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const router = useRouter();
 
   const searchForRecipes = (e) => {
     e.preventDefault();
+    closeMobileNav();
     console.log(router);
     router.push(`/search?v=${searchValue}`);
     setSearchValue("");
