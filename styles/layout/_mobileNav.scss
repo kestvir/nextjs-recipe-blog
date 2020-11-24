@@ -8,10 +8,10 @@
     z-index: 999;
     display: grid;
     place-items: center;
-    opacity: 0;
-    // display: none;
-    transition: all 0.3s linear;
-    transform: translateX(-100%);
+    // opacity: 0;
+    display: none;
+    // transition: all 0.3s linear;
+    // transform: translateX(-100%);
 
     &__inner {
         width: 100%;
@@ -77,7 +77,7 @@
 }
 
 .showMobileNav {
-    // display: flex;
-    opacity: 1;
-    transform: translateX(0);
+    display: flex;
+    // opacity: 1;
+    // transform: translateX(0);
 }
