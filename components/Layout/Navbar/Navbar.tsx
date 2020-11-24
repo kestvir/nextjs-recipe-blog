@@ -5,25 +5,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavLinks from "./NavLinks";
 import MobileNav from "./MobileNav";
 
-export interface NavbarProps {}
+export interface NavbarProps {
+  displayMobileNav: () => void;
+}
 
-const Navbar: React.FC<NavbarProps> = () => {
-  const [displayMobileNav, setDisplayMobileNav] = useState(false);
+const Navbar: React.FC<NavbarProps> = ({ displayMobileNav }) => {
+  // const [displayMobileNav, setDisplayMobileNav] = useState(false);
 
   return (
     <nav className="nav">
       <div className="container">
         <div className="nav__inner">
           <FontAwesomeIcon
-            onClick={() => setDisplayMobileNav(true)}
+            onClick={displayMobileNav}
             className="nav__menuIcon"
             icon={faBars}
           />
 
-          <MobileNav
+          {/* <FontAwesomeIcon
+            onClick={() => setDisplayMobileNav(true)}
+            className="nav__menuIcon"
+            icon={faBars}
+          /> */}
+
+          {/* <MobileNav
             isOpen={displayMobileNav}
             closeMobileNav={() => setDisplayMobileNav(false)}
-          />
+          /> */}
 
           <ul className="nav__linksList">
             <NavLinks linkClassName="nav__link" />

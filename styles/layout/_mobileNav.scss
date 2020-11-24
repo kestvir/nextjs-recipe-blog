@@ -1,6 +1,6 @@
 .mobileNav {
     background: $main-color;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -9,6 +9,7 @@
     display: grid;
     place-items: center;
     opacity: 0;
+    // display: none;
     transition: all 0.3s linear;
     transform: translateX(-100%);
 
@@ -76,6 +77,7 @@
 }
 
 .showMobileNav {
+    // display: flex;
     opacity: 1;
     transform: translateX(0);
 }
