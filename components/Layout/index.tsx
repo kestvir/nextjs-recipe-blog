@@ -11,10 +11,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Navbar displayMobileNav={() => setDisplayMobileNav(true)} />
-      <MobileNav
+      {/* <MobileNav
         isOpen={displayMobileNav}
         closeMobileNav={() => setDisplayMobileNav(false)}
-      />
+      /> */}
       {children}
       <Footer />
     </div>
