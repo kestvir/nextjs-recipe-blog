@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
-import { Date as PrismicDate } from "prismic-reactjs";
+import { Date as PrismicDate, RichText } from "prismic-reactjs";
 import Instructions from "./Instructions";
 import Ingredients from "./Ingredients";
 import Image from "next/image";
+import AboutRecipe from "./AboutRecipe";
 
 export interface PostContentProps {
   post: PrismicDoc;
@@ -40,6 +41,8 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
         height={post.data.dish_image.dimensions.height}
         quality={100}
       />
+
+      <AboutRecipe post={post}/>
 
       <Ingredients post={post} />
 
