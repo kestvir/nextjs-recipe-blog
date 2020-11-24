@@ -23,7 +23,7 @@ export async function getServerSideProps({ query }) {
         Prismic.Predicates.fulltext("document", searchValue),
       ],
       {
-        orderings: "[my.blog_post.first_publication_date desc]",
+        orderings: "[document.first_publication_date desc]",
         pageSize: 12,
         page: currentPage,
       }
@@ -42,6 +42,8 @@ const SearchResults: React.FC<SearchResults> = ({ postsData, searchValue }) => {
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
+
+  console.log(postsData);
 
   return (
     <div className="search">

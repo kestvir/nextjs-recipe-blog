@@ -13,10 +13,6 @@ export interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ postsData, searchValue }) => {
-  const router = useRouter();
-  console.log(postsData.page);
-  console.log(postsData.total_pages);
-
   return (
     <div className="pagination">
       <div className="pagination__prev">

@@ -14,7 +14,7 @@ export const getStaticProps = async (context) => {
   const postsData = await client.query(
     Prismic.Predicates.at("document.type", "blog_post"),
     {
-      orderings: "[my.blog_post.first_publication_date desc]",
+      orderings: "[document.first_publication_date desc]",
       pageSize: 10,
     }
   );
@@ -26,6 +26,7 @@ export const getStaticProps = async (context) => {
 };
 
 const Home: React.FC<HomeProps> = ({ postsData }) => {
+  console.log(postsData);
   return (
     <div className="home">
       <div className="gridWithSidebar">

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Client } from "../../prismic-configuration";
-import { queryRepeatableDocuments } from "../../utils/queries";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
 import PostContent from "../../components/PostContent";
 import Sidebar from "../../components/Sidebar";

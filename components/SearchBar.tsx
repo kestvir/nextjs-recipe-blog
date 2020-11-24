@@ -13,8 +13,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
 
   const searchForRecipes = (e) => {
     e.preventDefault();
-    closeMobileNav();
-    console.log(router);
+    if (closeMobileNav) closeMobileNav();
+
     router.push(`/search?v=${searchValue}`);
     setSearchValue("");
   };
