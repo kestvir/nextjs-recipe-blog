@@ -20,8 +20,8 @@ export const getStaticProps = async (context) => {
   );
 
   return {
-    revalidate: 10,
     props: { postsData },
+    revalidate: 1,
   };
 };
 
