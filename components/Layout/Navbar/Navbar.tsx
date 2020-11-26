@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ displayMobileNav }) => {
           />
 
           <ul className="nav__linksList">
-            <NavLinks linkClassName="nav__link" />
+            <NavLinks />
           </ul>
 
           <SearchBar />
