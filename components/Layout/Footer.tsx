@@ -1,4 +1,4 @@
-import StyledFooter from "../../styled/layout/Footer";
+import { StyledFooter } from "../../styled/layout/Footer";
 export interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
