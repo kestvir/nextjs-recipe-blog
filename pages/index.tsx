@@ -1,8 +1,8 @@
 import { Client } from "../prismic-configuration";
 import Prismic from "prismic-javascript";
 import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
-import Sidebar from "../components/Sidebar";
 import HomeRecipes from "../components/HomeRecipes";
+import { StyledRecipeListSection } from "../styled/layout/RecipeListSection";
 
 export interface HomeProps {
   postsData: ApiSearchResponse;
@@ -26,14 +26,10 @@ export const getStaticProps = async (context) => {
 };
 
 const Home: React.FC<HomeProps> = ({ postsData }) => {
-  console.log(postsData);
   return (
-    <div className="home">
-      <div className="gridWithSidebar">
-        <HomeRecipes postsData={postsData} />
-        <Sidebar />
-      </div>
-    </div>
+    <StyledRecipeListSection>
+      <HomeRecipes postsData={postsData} />
+    </StyledRecipeListSection>
   );
 };
 

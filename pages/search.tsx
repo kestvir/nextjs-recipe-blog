@@ -1,11 +1,12 @@
-import Link from "next/link";
 import Prismic from "prismic-javascript";
 import { useRouter } from "next/router";
 import { Client } from "../prismic-configuration";
 import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
-import Sidebar from "../components/Sidebar";
 import RecipeListItem from "../components/RecipeListItem";
 import Pagination from "../components/Pagination";
+import { Grid3 } from "../styled/layout/Grid";
+import { StyledRecipeListSection } from "../styled/layout/RecipeListSection";
+import { StyledRecipeResultsTitle } from "../styled/components/RecipeResultsTitle";
 
 export interface SearchResults {
   postsData: ApiSearchResponse;
@@ -43,29 +44,18 @@ const SearchResults: React.FC<SearchResults> = ({ postsData, searchValue }) => {
     return <h1>Loading...</h1>;
   }
 
-  console.log(postsData);
-
   return (
-    <div className="search">
-      <div className="gridWithSidebar">
-        <div className="search__inner">
-          <h3 className="search__result">Search results for: {searchValue}</h3>
-          <ul className="grid3">
-            {postsData.results.map((post) => {
-              return (
-                <RecipeListItem
-                  key={post.uid}
-                  post={post}
-                  linkClassName="search__recipeTitle"
-                />
-              );
-            })}
-          </ul>
-          <Pagination postsData={postsData} searchValue={searchValue} />
-        </div>
-        <Sidebar />
-      </div>
-    </div>
+    <StyledRecipeListSection>
+      <StyledRecipeResultsTitle>
+        Search results for: {searchValue}
+      </StyledRecipeResultsTitle>
+      <Grid3>
+        {postsData.results.map((post) => {
+          return <RecipeListItem key={post.uid} post={post} />;
+        })}
+      </Grid3>
+      <Pagination postsData={postsData} searchValue={searchValue} />
+    </StyledRecipeListSection>
   );
 };
 

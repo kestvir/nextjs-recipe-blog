@@ -62,17 +62,17 @@ export const MobileNavStyled = styled.nav`
     display: block;
     width: 70%;
 
-    &__inputContainer {
+    .inputContainer {
       display: flex;
       border: none;
       width: 100%;
     }
 
-    &__input {
+    .input {
       width: 100%;
     }
 
-    &__form {
+    .form {
       background-color: #fff;
     }
   }

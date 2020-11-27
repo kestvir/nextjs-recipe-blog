@@ -6,6 +6,7 @@ import {
   faLongArrowAltRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import StyledPagination from "../styled/components/Pagination";
 
 export interface PaginationProps {
   postsData: ApiSearchResponse;
@@ -14,7 +15,7 @@ export interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({ postsData, searchValue }) => {
   return (
-    <div className="pagination">
+    <StyledPagination>
       <div className="pagination__prev">
         {postsData.page <= 1 ? null : (
           <Link href={`/search?page=${postsData.page - 1}&v=${searchValue}`}>
@@ -36,7 +37,7 @@ const Pagination: React.FC<PaginationProps> = ({ postsData, searchValue }) => {
           </Link>
         </div>
       )}
-    </div>
+    </StyledPagination>
   );
 };
 

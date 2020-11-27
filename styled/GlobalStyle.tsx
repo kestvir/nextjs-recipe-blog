@@ -41,13 +41,19 @@ export default createGlobalStyle`
         object-fit: cover;
     }
 
-    .home,
-    .about,
-    .custom404,
-    .search,
-    .categories,
-    .course {
-        padding: 2rem 0;
-        min-height: calc(100vh - 48.59px - 48.59px);
+    section {
+        min-height: calc(100vh - 49.58px - 48.59px - 4rem);
+    }
+
+
+    #disqus_thread {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .goback {
+        text-align: left;
+        align-self: self-start;
+        cursor: pointer;
     }
 `;

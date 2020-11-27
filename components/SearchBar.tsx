@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { StyledSearchbar } from "../styled/components/Searchbar";
+
 export interface SearchBarProps {
   closeMobileNav?: () => void;
 }
@@ -20,11 +22,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
   };
 
   return (
-    <div className="searchbar">
-      <form className="searchbar__form" onSubmit={searchForRecipes}>
-        <div className="searchbar__inputContainer">
+    <StyledSearchbar className="searchbar">
+      <form className="form" onSubmit={searchForRecipes}>
+        <div className="inputContainer">
           <input
-            className="searchbar__input"
+            className="input"
             placeholder="search"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
@@ -34,7 +36,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
           </button>
         </div>
       </form>
-    </div>
+    </StyledSearchbar>
   );
 };
 

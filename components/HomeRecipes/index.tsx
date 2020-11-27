@@ -1,5 +1,7 @@
 import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
 import RecipeListItem from "../RecipeListItem";
+import { Grid2 } from "../../styled/layout/Grid";
+import { StyledTitleWithBorder } from "../../styled/components/TitleWithBorder";
 
 export interface HomeRecipesProps {
   postsData: ApiSearchResponse;
@@ -7,20 +9,14 @@ export interface HomeRecipesProps {
 
 const HomeRecipes: React.FC<HomeRecipesProps> = ({ postsData }) => {
   return (
-    <div>
-      <h2 className="home__title">Latest recipes</h2>
-      <ul className="grid2">
+    <>
+      <StyledTitleWithBorder>Latest recipes</StyledTitleWithBorder>
+      <Grid2>
         {postsData.results.map((post) => {
-          return (
-            <RecipeListItem
-              key={post.uid}
-              post={post}
-              linkClassName="home__recipeTitle"
-            />
-          );
+          return <RecipeListItem key={post.uid} post={post} />;
         })}
-      </ul>
-    </div>
+      </Grid2>
+    </>
   );
 };
 

@@ -9,15 +9,7 @@
     &__inner {
         padding: 1.5rem 0;
     }
-    &__recipeTitle {
-        color: $main-color;
-        font-size: $home-link-font-size;
-        transition: $link-transition;
 
-        &:hover {
-            color: $light-main-color;
-        }
-    }
     &__title {
         margin-bottom: 1rem;
     }

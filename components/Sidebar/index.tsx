@@ -2,6 +2,7 @@ import Image from "next/image";
 import Prismic from "prismic-javascript";
 import { RichText } from "prismic-reactjs";
 import useSWR from "swr";
+import StyledSidebar from "../../styled/layout/Sidebar";
 
 const { NEXT_PUBLIC_API_ENDPOINT } = process.env;
 
@@ -24,14 +25,14 @@ const Sidebar: React.FC = () => {
   if (!data) return <div>{""}</div>;
 
   return (
-    <div className="sidebar">
+    <StyledSidebar>
       <Image
         src={sidebarData.sidebar_img.url}
         width={sidebarData.sidebar_img.dimensions.width}
         height={sidebarData.sidebar_img.dimensions.height}
       />
       <RichText render={sidebarData.sidebar_text_content} />
-    </div>
+    </StyledSidebar>
   );
 };
 

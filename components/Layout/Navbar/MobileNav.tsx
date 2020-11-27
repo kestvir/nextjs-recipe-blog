@@ -1,6 +1,6 @@
 import NavLinks from "./NavLinks";
 import SearchBar from "../../SearchBar";
-import { MobileNavStyled } from "../../../styled/MobileNav";
+import { MobileNavStyled } from "../../../styled/layout/MobileNav";
 
 export interface MobileNavProps {
   isOpen: boolean;

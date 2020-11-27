@@ -1,17 +1,21 @@
 import Layout from "../components/Layout";
-import "../styles/main.scss";
 import theme from "../styled/theme";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styled/GlobalStyle";
+import { StyledContainer, MainGrid } from "../styled/layout/Grid";
+import Sidebar from "../components/Sidebar";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout>
-        <div className="container">
-          <Component {...pageProps} />
-        </div>
+        <StyledContainer>
+          <MainGrid>
+            <Component {...pageProps} />
+            <Sidebar />
+          </MainGrid>
+        </StyledContainer>
       </Layout>
     </ThemeProvider>
   );

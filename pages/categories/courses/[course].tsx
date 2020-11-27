@@ -1,12 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
 import Prismic from "prismic-javascript";
 import { useRouter } from "next/router";
 import { Client } from "../../../prismic-configuration";
-import Sidebar from "../../../components/Sidebar";
 import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
-import { Document as PrismicDoc } from "prismic-javascript/types/documents";
 import RecipeListItem from "../../../components/RecipeListItem";
+import { Grid3 } from "../../../styled/layout/Grid";
+import { StyledRecipeListSection } from "../../../styled/layout/RecipeListSection";
+import { StyledTitle } from "../../../styled/components/Title";
 
 export interface CourseRecipesProps {
   postsData: ApiSearchResponse;
@@ -59,25 +58,14 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
   }
 
   return (
-    <div className="course">
-      <div className="gridWithSidebar">
-        <div className="course-inner">
-          <h2 className="course__title">{capitalizedCourse} dishes: </h2>
-          <ul className="grid3">
-            {postsData.results.map((post) => {
-              return (
-                <RecipeListItem
-                  key={post.uid}
-                  post={post}
-                  linkClassName="course__recipeTitle"
-                />
-              );
-            })}
-          </ul>
-        </div>
-        <Sidebar />
-      </div>
-    </div>
+    <StyledRecipeListSection>
+      <StyledTitle>{capitalizedCourse} dishes: </StyledTitle>
+      <Grid3>
+        {postsData.results.map((post) => {
+          return <RecipeListItem key={post.uid} post={post} />;
+        })}
+      </Grid3>
+    </StyledRecipeListSection>
   );
 };
 

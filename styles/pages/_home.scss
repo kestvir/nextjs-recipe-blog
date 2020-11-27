@@ -5,18 +5,10 @@
             text-align: center;
         }
     }
-    &__inner {
-        padding: 1.5rem 0;
-    }
-    &__recipeTitle {
-        color: $main-color;
-        font-size: $home-link-font-size;
-        transition: $link-transition;
+    // &__inner {
+    //     padding: 1.5rem 0;
+    // }
 
-        &:hover {
-            color: $light-main-color;
-        }
-    }
     &__title {
         border-bottom: 3px solid $border-color;
         margin-bottom: 2.2rem;

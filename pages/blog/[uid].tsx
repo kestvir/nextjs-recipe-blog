@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Client } from "../../prismic-configuration";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
 import PostContent from "../../components/PostContent";
-import Sidebar from "../../components/Sidebar";
+import { StyledPost } from "../../styled/pages/Post";
 
 export interface Post {
   post: PrismicDoc;
@@ -41,17 +41,14 @@ const Post: React.FC<Post> = ({ post }) => {
   }
 
   return (
-    <div className="post">
+    <StyledPost>
       <p className="goback">
         <Link href="/">
           <a>Go back</a>
         </Link>
       </p>
-      <div className="gridWithSidebar">
-        <PostContent post={post} />
-        <Sidebar />
-      </div>
-    </div>
+      <PostContent post={post} />
+    </StyledPost>
   );
 };
 

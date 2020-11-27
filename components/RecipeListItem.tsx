@@ -1,16 +1,15 @@
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
 import Image from "next/image";
 import Link from "next/link";
+import { StyledLink } from "../styled/components/Link";
 
 export interface RecipeListItemProps {
   post: PrismicDoc;
-  linkClassName: string;
   customSlug?: string;
 }
 
 const RecipeListItem: React.FC<RecipeListItemProps> = ({
   post,
-  linkClassName,
   customSlug,
 }) => {
   let key: string;
@@ -25,7 +24,7 @@ const RecipeListItem: React.FC<RecipeListItemProps> = ({
         quality={100}
       />
       <Link href={`/blog/${encodeURIComponent(key)}`}>
-        <a className={linkClassName}>{post.data.title[0].text}</a>
+        <StyledLink>{post.data.title[0].text}</StyledLink>
       </Link>
     </li>
   );
