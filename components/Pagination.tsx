@@ -5,7 +5,7 @@ import {
   faLongArrowAltRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StyledPagination from "../styled/components/Pagination";
+import { StyledPagination } from "../styled/components/Pagination";
 
 export interface PaginationProps {
   postsData: ApiSearchResponse;
