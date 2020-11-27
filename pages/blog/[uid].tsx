@@ -37,7 +37,11 @@ const Post: React.FC<Post> = ({ post }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return (
+      <section>
+        <h2>Loading...</h2>
+      </section>
+    );
   }
 
   return (

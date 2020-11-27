@@ -54,7 +54,11 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
   }
 
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return (
+      <section>
+        <h2>Loading...</h2>
+      </section>
+    );
   }
 
   return (
