@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import ApiSearchResponse from "prismic-javascript/types/ApiSearchResponse";
 import {
   faLongArrowAltLeft,
