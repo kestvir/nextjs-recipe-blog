@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({ postsData, searchValue }) => {
           <Link href={`/search?page=${postsData.page - 1}&v=${searchValue}`}>
             <a>
               <FontAwesomeIcon icon={faLongArrowAltLeft} />
-              <span>Previous</span>
+              <span>Senesni įrašai</span>
             </a>
           </Link>
         )}
@@ -30,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({ postsData, searchValue }) => {
         <div className="pagination__next">
           <Link href={`/search?page=${postsData.page + 1}&v=${searchValue}`}>
             <a>
-              <span>Next</span>
+              <span>Naujesni įrašai</span>
               <FontAwesomeIcon icon={faLongArrowAltRight} />
             </a>
           </Link>

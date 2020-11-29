@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
     e.preventDefault();
     if (closeMobileNav) closeMobileNav();
 
-    router.push(`/search?v=${searchValue}`);
+    router.push(`/paieska?s=${searchValue}`);
     setSearchValue("");
   };
 
@@ -27,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
         <div className="inputContainer">
           <input
             className="input"
-            placeholder="search"
+            placeholder="paieška"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />

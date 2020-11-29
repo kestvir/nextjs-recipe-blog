@@ -9,14 +9,15 @@ import { StyledTitle } from "../../../styled/components/Title";
 
 export interface CourseRecipesProps {
   postsData: ApiSearchResponse;
-  tag: string;
+  course: string;
 }
 
 export async function getStaticProps({ params }) {
   const client = Client();
-  const tag = params.course;
+  const course = params.course;
+  console.log(course);
   const postsData = await client.query(
-    Prismic.Predicates.at("document.tags", [params.course]),
+    Prismic.Predicates.at("my.blog_post.pagal_tipa", params.course),
     {
       orderings: "[my.blog_post.first_publication_date desc]",
       pageSize: 12,
@@ -32,7 +33,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       postsData,
-      tag,
+      course,
     },
   };
 }
@@ -44,13 +45,15 @@ export async function getStaticPaths() {
   };
 }
 
-const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
+const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, course }) => {
   const router = useRouter();
 
   let capitalizedCourse;
 
-  if (postsData && tag) {
-    capitalizedCourse = tag.charAt(0).toUpperCase() + tag.slice(1);
+  if (course === "uzkandziai") course = "užkandžiai";
+
+  if (postsData && course) {
+    capitalizedCourse = course.charAt(0).toUpperCase() + course.slice(1);
   }
 
   if (router.isFallback) {
@@ -61,9 +64,11 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, tag }) => {
     );
   }
 
+  console.log(postsData);
+
   return (
     <StyledRecipeListSection>
-      <StyledTitle>{capitalizedCourse} dishes: </StyledTitle>
+      <StyledTitle>{capitalizedCourse}: </StyledTitle>
       <Grid3>
         {postsData.results.map((post) => {
           return <RecipeListItem key={post.uid} post={post} />;

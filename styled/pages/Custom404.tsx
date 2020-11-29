@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Styled404Page = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
   .title {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
   p {
     margin: 1rem 0;
@@ -19,9 +18,14 @@ export const Styled404Page = styled.section`
       color: ${({ theme }) => theme.colors.main};
     }
   }
+  .backHome {
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
 
   @media screen and (max-width: 1170px) {
     justify-content: center;
+    text-align: center;
   }
 
   @media screen and (max-width: 550px) {

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Client } from "../../prismic-configuration";
+import { Client } from "../prismic-configuration";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
-import PostContent from "../../components/PostContent";
-import { StyledPost } from "../../styled/pages/Post";
+import PostContent from "../components/PostContent";
+import { StyledPost } from "../styled/pages/Post";
 
 export interface Post {
   post: PrismicDoc;
@@ -46,11 +46,6 @@ const Post: React.FC<Post> = ({ post }) => {
 
   return (
     <StyledPost>
-      <p className="goback">
-        <Link href="/">
-          <a>Go back</a>
-        </Link>
-      </p>
       <PostContent post={post} />
     </StyledPost>
   );

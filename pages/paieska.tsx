@@ -7,6 +7,8 @@ import Pagination from "../components/Pagination";
 import { Grid3 } from "../styled/layout/Grid";
 import { StyledRecipeListSection } from "../styled/layout/RecipeListSection";
 import { StyledRecipeResultsTitle } from "../styled/components/RecipeResultsTitle";
+import Searchbar from "../components/SearchBar";
+import { StyledNotFound } from "../styled/components/NotFound";
 
 export interface SearchResults {
   postsData: ApiSearchResponse;
@@ -15,7 +17,7 @@ export interface SearchResults {
 
 export async function getServerSideProps({ query }) {
   const client = Client();
-  const searchValue = query.v;
+  const searchValue = query.s;
   const currentPage = query.page === 1 ? 1 : query.page;
   try {
     const postsData = await client.query(
@@ -47,13 +49,25 @@ const SearchResults: React.FC<SearchResults> = ({ postsData, searchValue }) => {
   return (
     <StyledRecipeListSection>
       <StyledRecipeResultsTitle>
-        Search results for: {searchValue}
+        Jūs ieškojote: {searchValue}
       </StyledRecipeResultsTitle>
-      <Grid3>
-        {postsData.results.map((post) => {
-          return <RecipeListItem key={post.uid} post={post} />;
-        })}
-      </Grid3>
+
+      {postsData.results.length === 0 ? (
+        <StyledNotFound>
+          <p>
+            Deja, nieko panašaus rasti nepavyko. Pabandykite įvesti kitokį
+            paieškos raktažodį.
+          </p>
+          <Searchbar />
+        </StyledNotFound>
+      ) : (
+        <Grid3>
+          {postsData.results.map((post) => {
+            return <RecipeListItem key={post.uid} post={post} />;
+          })}
+        </Grid3>
+      )}
+
       <Pagination postsData={postsData} searchValue={searchValue} />
     </StyledRecipeListSection>
   );

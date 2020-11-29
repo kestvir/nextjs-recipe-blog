@@ -10,7 +10,7 @@ export interface HomeRecipesProps {
 const HomeRecipes: React.FC<HomeRecipesProps> = ({ postsData }) => {
   return (
     <>
-      <StyledTitleWithBorder>Latest recipes</StyledTitleWithBorder>
+      <StyledTitleWithBorder>Naujausi įrašai</StyledTitleWithBorder>
       <Grid2>
         {postsData.results.map((post) => {
           return <RecipeListItem key={post.uid} post={post} />;

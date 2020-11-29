@@ -23,7 +23,7 @@ export interface CategoriesProps {
 const Categories: React.FC<CategoriesProps> = ({ categories }) => {
   return (
     <StyledRecipeListSection>
-      <StyledTitle>By Course: </StyledTitle>
+      <StyledTitle>Pagal tipą: </StyledTitle>
       <Grid3>
         {categories.data.body.map((category) => {
           return (
@@ -35,7 +35,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories }) => {
                 quality={100}
               />
               <Link
-                href={`categories/courses/${encodeURIComponent(
+                href={`receptai/pagal-tipa/${encodeURIComponent(
                   category.primary.custom_slug
                 )}`}
               >

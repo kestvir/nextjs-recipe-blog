@@ -26,11 +26,15 @@ export const StyledPost = styled.section`
       }
     }
     padding-bottom: 3rem;
-    border-bottom: 1px solid $border-color;
+    border-bottom: ${({ theme }) => `1px solid ${theme.colors.border}`};
   }
 
   .aboutRecipe {
     line-height: 2rem;
     margin-bottom: 1rem;
+  }
+
+  .publishedOn {
+    padding: 0.35rem 0;
   }
 `;

@@ -3,6 +3,7 @@ import { RichText } from "prismic-reactjs";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
 import { Client } from "../prismic-configuration";
 import StyledAbout from "../styled/pages/About";
+import { StyledTitle } from "../styled/components/Title";
 
 export async function getStaticProps({ params }) {
   const client = Client();
@@ -25,7 +26,7 @@ const About: React.FC<AboutProps> = ({ aboutDoc }) => {
   return (
     <StyledAbout>
       <div className="about-inner">
-        <h2>{data.title[0].text}</h2>
+        <StyledTitle>Apie mane:</StyledTitle>
         <Image
           src={data.about_me_img.url}
           width={data.about_me_img.dimensions.width}

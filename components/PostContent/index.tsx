@@ -29,11 +29,18 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
   }, []);
 
   const publishing_date = PrismicDate(post.first_publication_date);
+  const dateOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
   return (
     <div className="post-content">
       <h1>{post.data.title[0].text}</h1>
-      <p>Publshed on: {publishing_date.toDateString()}</p>
+      <p className="publishedOn">
+        {publishing_date.toLocaleDateString("lt-LT", dateOptions)}
+      </p>
 
       <Image
         src={post.data.dish_image.url}
@@ -42,7 +49,7 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
         quality={100}
       />
 
-      <AboutRecipe post={post}/>
+      <AboutRecipe post={post} />
 
       <Ingredients post={post} />
 

@@ -8,7 +8,7 @@ export interface IngredientsProps {
 const Ingredients: React.FC<IngredientsProps> = ({ post }) => {
   return (
     <div className="ingredients">
-      <h3>Ingredients: </h3>
+      <h3>Ingredientai: </h3>
       {post.data.body.map((ingredientData, i) => {
         return (
           <div

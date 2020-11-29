@@ -31,7 +31,7 @@ export const StyledNavbar = styled.nav`
     display: none;
   }
 
-  @media screen and (max-width: 476px) {
+  @media screen and (max-width: 485px) {
     background-color: ${({ theme }) => theme.colors.main};
     .inner {
       justify-content: space-between;

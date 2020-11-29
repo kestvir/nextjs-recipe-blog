@@ -6,7 +6,6 @@ export interface AboutRecipeProps {
 }
 
 const AboutRecipe: React.FC<AboutRecipeProps> = ({ post }) => {
-  console.log(post);
   return (
     <div className="aboutRecipe">
       <h3>Apie receptą: </h3>

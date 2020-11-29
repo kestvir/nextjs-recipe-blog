@@ -1,16 +1,21 @@
 import Link from "next/link";
 import { Styled404Page } from "../styled/pages/Custom404";
+import { StyledNotFound } from "../styled/components/NotFound";
+import SearchBar from "../components/SearchBar";
 
 export interface Custom404Props {}
 
 const Custom404: React.FC<Custom404Props> = () => {
   return (
     <Styled404Page>
-      <h2 className="title">404 - Page Not Found.</h2>
-      <p>The page you are looking fore does not exist.</p>
-      <Link href={"/"}>
-        <a>BACK TO HOME PAGE</a>
-      </Link>
+      <h4 className="title">404 - puslapis nerastas.</h4>
+      <StyledNotFound>
+        <p>
+          Deja, toks puslapis nerastas. Patikslinkite, ko ieškote ir mėginkite
+          ieškoti dar kartą.
+        </p>
+        <SearchBar />
+      </StyledNotFound>
     </Styled404Page>
   );
 };

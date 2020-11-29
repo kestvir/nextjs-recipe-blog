@@ -9,21 +9,21 @@ const NavLinks: React.FC<NavLinksProps> = ({ closeMobileNav }) => {
       <li>
         <Link href={"/"}>
           <a onClick={closeMobileNav} className="link">
-            Home
+            Pradžia
           </a>
         </Link>
       </li>
       <li>
-        <Link href={"/categories"}>
+        <Link href={"/receptai"}>
           <a onClick={closeMobileNav} className="link">
-            Recipes
+            Receptai
           </a>
         </Link>
       </li>
       <li>
-        <Link href={"/about"}>
+        <Link href={"/apie"}>
           <a onClick={closeMobileNav} className="link">
-            About
+            Apie
           </a>
         </Link>
       </li>
