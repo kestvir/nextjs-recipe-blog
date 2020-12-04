@@ -5,8 +5,7 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
       <p>
-        · Copyright © 2020 <span> Ritos Virtuvėje</span> - Visos teisės saugomos
-        ·
+        © 2020 <b>Ritos Virtuvėje</b> - Visos teisės saugomos
       </p>
     </StyledFooter>
   );

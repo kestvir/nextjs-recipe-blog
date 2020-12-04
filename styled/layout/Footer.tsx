@@ -7,11 +7,11 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   border-top: 1px solid #eee;
   padding: 0.8rem 0;
-  span {
-    font-weight: 700;
-  }
 
-  @media screen and (max-width: 358px) {
+  @media screen and (max-width: 486px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 350px) {
     font-size: 0.8rem;
   }
 `;

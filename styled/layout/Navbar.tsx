@@ -36,6 +36,7 @@ export const StyledNavbar = styled.nav`
     background-color: ${({ theme }) => theme.colors.main};
     .inner {
       justify-content: space-between;
+      border: none;
     }
     .linksList {
       display: none;
