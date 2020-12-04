@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
-  border-bottom: ${({ theme }) => `1px solid ${theme.colors.border}`};
   .inner {
+    border-top: ${({ theme }) => `1px solid ${theme.colors.border}`};
+    border-bottom: ${({ theme }) => `1px solid ${theme.colors.border}`};
     display: flex;
     justify-content: center;
     align-items: center;

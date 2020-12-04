@@ -4,7 +4,10 @@ export interface FooterProps {}
 const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
-      · Copyright © 2020 ... - Visos teisės saugomos ·
+      <p>
+        · Copyright © 2020 <span> Ritos Virtuvėje</span> - Visos teisės saugomos
+        ·
+      </p>
     </StyledFooter>
   );
 };

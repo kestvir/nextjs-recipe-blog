@@ -42,7 +42,7 @@ export default createGlobalStyle`
     }
 
     section {
-        min-height: calc(100vh - 49.58px - 48.59px - 4rem);
+        min-height: calc(100vh - 48.58px - 48.59px - 4rem - 226px);
     }
 
 

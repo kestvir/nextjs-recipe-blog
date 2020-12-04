@@ -1,6 +1,7 @@
-import Footer from "./Footer";
+import Header from "./Header";
 import Navbar from "./Navbar/Navbar";
 import MobileNav from "../Layout/Navbar/MobileNav";
+import Footer from "./Footer";
 import { useState } from "react";
 
 export interface LayoutProps {}
@@ -10,6 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div>
+      <Header />
       <Navbar displayMobileNav={() => setDisplayMobileNav(true)} />
       <MobileNav
         isOpen={displayMobileNav}
