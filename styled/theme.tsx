@@ -4,6 +4,7 @@ export default {
     lightMain: "#c36",
     secondaryText: "#555",
     border: "#eee",
+    darkerBorder: "#e6e6e6",
   },
   fonts: {
     title: `"Open Sans", sans-serif`,

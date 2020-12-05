@@ -3,6 +3,7 @@ import Prismic from "prismic-javascript";
 import { RichText } from "prismic-reactjs";
 import useSWR from "swr";
 import StyledSidebar from "../../styled/layout/Sidebar";
+import NewsletterForm from "./NewsletterForm";
 
 const { NEXT_PUBLIC_API_ENDPOINT } = process.env;
 
@@ -28,6 +29,7 @@ const Sidebar: React.FC = () => {
     <StyledSidebar>
       <Image src={sidebarData.sidebar_img.url} width={300} height={300} />
       <RichText render={sidebarData.sidebar_text_content} />
+      <NewsletterForm />
     </StyledSidebar>
   );
 };
