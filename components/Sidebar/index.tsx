@@ -26,11 +26,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <StyledSidebar>
-      <Image
-        src={sidebarData.sidebar_img.url}
-        width={sidebarData.sidebar_img.dimensions.width}
-        height={sidebarData.sidebar_img.dimensions.height}
-      />
+      <Image src={sidebarData.sidebar_img.url} width={300} height={300} />
       <RichText render={sidebarData.sidebar_text_content} />
     </StyledSidebar>
   );
