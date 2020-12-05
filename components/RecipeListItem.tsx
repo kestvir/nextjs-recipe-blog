@@ -21,7 +21,7 @@ const RecipeListItem: React.FC<RecipeListItemProps> = ({
         src={post.data.dish_image.url}
         width={post.data.dish_image.dimensions.width}
         height={post.data.dish_image.dimensions.height}
-        quality={100}
+        // quality={100}
       />
       <Link href={`/${encodeURIComponent(key)}`}>
         <StyledLink>{post.data.title[0].text}</StyledLink>
