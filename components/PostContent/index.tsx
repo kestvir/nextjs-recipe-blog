@@ -19,7 +19,7 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
       };
 
       const script = document.createElement("script");
-      script.src = "https://ghostcmsrecipeblog.disqus.com/embed.js"; // change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      script.src = "https://ritos-virtuveje.disqus.com/embed.js";
       script.setAttribute("data-timestamp", Date.now().toString());
 
       document.body.appendChild(script);
