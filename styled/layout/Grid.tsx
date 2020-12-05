@@ -30,7 +30,7 @@ export const Grid3 = styled.ul`
 
 export const MainGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 325px;
+  grid-template-columns: 1fr 300px;
   -webkit-column-gap: 3rem;
   column-gap: 3rem;
   padding: 2rem 0;

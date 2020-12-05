@@ -37,4 +37,8 @@ export const StyledPost = styled.section`
   .publishedOn {
     padding: 0.35rem 0;
   }
+
+  @media screen and (max-width: 1170px) {
+    margin: 0 auto;
+  }
 `;

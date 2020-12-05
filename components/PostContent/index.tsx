@@ -44,8 +44,8 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
 
       <Image
         src={post.data.dish_image.url}
-        width={post.data.dish_image.dimensions.width}
-        height={post.data.dish_image.dimensions.height}
+        width={740}
+        height={740}
         quality={100}
       />
 
