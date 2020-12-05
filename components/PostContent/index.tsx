@@ -42,12 +42,7 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
         {publishing_date.toLocaleDateString("lt-LT", dateOptions)}
       </p>
 
-      <Image
-        src={post.data.dish_image.url}
-        width={740}
-        height={740}
-        quality={100}
-      />
+      <Image src={post.data.dish_image.url} width={740} height={740} />
 
       <AboutRecipe post={post} />
 
