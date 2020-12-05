@@ -9,7 +9,7 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <StyledHeader>
       <Link href="/">
-        <Image src={"/logo.png"} width="220" height="220" quality="100" />
+        <Image src={"/logo.png"} width="220" height="220" />
       </Link>
     </StyledHeader>
   );
