@@ -1,4 +1,3 @@
-import { faRProject } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { StyledHeader } from "../../styled/layout/Header";
@@ -9,7 +8,9 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <StyledHeader>
       <Link href="/">
-        <Image src={"/logo.png"} width="220" height="220" />
+        <span style={{ cursor: "pointer" }}>
+          <Image src={"/logo.png"} width="220" height="220" />
+        </span>
       </Link>
     </StyledHeader>
   );
