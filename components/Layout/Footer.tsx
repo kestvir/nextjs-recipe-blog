@@ -5,7 +5,8 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
       <p>
-        © 2020 <b>Ritos Virtuvėje</b> - Visos teisės saugomos
+        © {new Date().getFullYear()} <b>Ritos Virtuvėje</b> - Visos teisės
+        saugomos
       </p>
     </StyledFooter>
   );
