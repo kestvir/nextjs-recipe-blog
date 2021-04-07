@@ -7,7 +7,7 @@ const NewsletterForm: React.FC<NewsLetterFormProps> = () => {
   const inputEl = useRef(null);
   const [message, setMessage] = useState("");
 
-  const subscribe = async (e) => {
+  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!/\S+@\S+\.\S+/.test(inputEl.current.value)) {
@@ -50,6 +50,7 @@ const NewsletterForm: React.FC<NewsLetterFormProps> = () => {
       <input
         id="email-input"
         name="email"
+        required
         placeholder="you@awesome.com"
         ref={inputEl}
         type="email"

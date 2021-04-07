@@ -9,11 +9,10 @@ export interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ closeMobileNav }) => {
-  const [searchValue, setSearchValue] = useState<string>("");
+  const [searchValue, setSearchValue] = useState("");
 
   const router = useRouter();
-
-  const searchForRecipes = (e) => {
+  const searchForRecipes = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (closeMobileNav) closeMobileNav();
 

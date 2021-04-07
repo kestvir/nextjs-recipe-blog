@@ -9,6 +9,7 @@ export const StyledNewsletterForm = styled.form`
     width: 100%;
     height: 2rem;
     margin: 0.7rem 0;
+    padding: 0 5px;
     &::placeholder {
       padding-left: 5px;
     }

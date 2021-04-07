@@ -6,6 +6,20 @@ export const StyledContainer = styled.div`
   margin: 0 auto;
 `;
 
+export const MainGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  -webkit-column-gap: 3rem;
+  column-gap: 3rem;
+  padding: 2rem 0;
+  min-height: calc(100vh - 226px - 48.58px - 48.59px);
+
+  @media screen and (max-width: 1170px) {
+    grid-template-columns: 1fr;
+    min-height: calc(100vh - 226px - 48.58px - 46.59px);
+  }
+`;
+
 export const Grid2 = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -24,18 +38,6 @@ export const Grid3 = styled.ul`
   column-gap: 1rem;
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const MainGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  -webkit-column-gap: 3rem;
-  column-gap: 3rem;
-  padding: 2rem 0;
-
-  @media screen and (max-width: 1170px) {
     grid-template-columns: 1fr;
   }
 `;
