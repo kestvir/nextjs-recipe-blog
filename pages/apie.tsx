@@ -13,6 +13,7 @@ export async function getStaticProps({ params }) {
     props: {
       aboutDoc,
     },
+    revalidate: 1,
   };
 }
 
