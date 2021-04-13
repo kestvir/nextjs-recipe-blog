@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
-import { Date as PrismicDate, RichText } from "prismic-reactjs";
+import { Date as PrismicDate } from "prismic-reactjs";
 import Instructions from "./Instructions";
 import Ingredients from "./Ingredients";
 import Image from "next/image";
@@ -31,9 +31,9 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
   const publishing_date = PrismicDate(post.first_publication_date);
   const dateOptions = {
     year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+    month: "2-digit",
+    day: "2-digit",
+  } as const;
 
   return (
     <div className="post-content">

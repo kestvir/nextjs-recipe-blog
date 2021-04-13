@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Styled404Page } from "../styled/pages/Custom404";
 import { StyledNotFound } from "../styled/components/NotFound";
 import SearchBar from "../components/SearchBar";

@@ -9,7 +9,7 @@ const Ingredients: React.FC<IngredientsProps> = ({ post }) => {
   return (
     <div className="ingredients">
       <h3>Ingredientai: </h3>
-      {post.data.body.map((ingredientData, i) => {
+      {post.data.body.map((ingredientData) => {
         return (
           <div
             className="part"

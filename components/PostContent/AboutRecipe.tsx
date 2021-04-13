@@ -6,11 +6,16 @@ export interface AboutRecipeProps {
 }
 
 const AboutRecipe: React.FC<AboutRecipeProps> = ({ post }) => {
+  const aboutData = post.data.about_recipe;
   return (
-    <div className="aboutRecipe">
-      <h3>Apie receptą: </h3>
-      <RichText render={post.data.about_recipe} />
-    </div>
+    <>
+      {aboutData && (
+        <div className="aboutRecipe">
+          <h3>Apie receptą: </h3>
+          <RichText render={aboutData} />
+        </div>
+      )}
+    </>
   );
 };
 

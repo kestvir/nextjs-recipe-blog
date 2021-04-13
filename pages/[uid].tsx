@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { Client } from "../prismic-configuration";
 import { Document as PrismicDoc } from "prismic-javascript/types/documents";
