@@ -7,14 +7,15 @@ export interface AboutRecipeProps {
 
 const AboutRecipe: React.FC<AboutRecipeProps> = ({ post }) => {
   const aboutData = post.data.about_recipe;
+  console.log(aboutData.length);
   return (
     <>
-      {aboutData && (
+      {aboutData.length ? (
         <div className="aboutRecipe">
           <h3>Apie receptą: </h3>
           <RichText render={aboutData} />
         </div>
-      )}
+      ) : null}
     </>
   );
 };
