@@ -31,8 +31,8 @@ const PostContent: React.FC<PostContentProps> = ({ post }) => {
   const publishing_date = PrismicDate(post.first_publication_date);
   const dateOptions = {
     year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    month: "long",
+    day: "numeric",
   } as const;
 
   return (

@@ -5,4 +5,7 @@ export default styled.section`
     padding-top: 1rem;
     line-height: 1.9rem;
   }
+  p {
+    text-align: justify;
+  }
 `;
