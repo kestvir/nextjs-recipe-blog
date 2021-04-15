@@ -1,30 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ritos virtuveje
 
-## Getting Started
+A personal food blog. 
 
-First, run the development server:
+https://ritosvirtuveje.lt/
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![Capture](https://user-images.githubusercontent.com/25966281/114925023-400e4900-9e37-11eb-9a2f-71e312285e83.PNG)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies used
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Typescript, Next.js, Prismic CMS, styled-components.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+-   [x] Owner of the website can change all of the websites content using Prismic CMS.
+-   [x] Users can leave a comment below an individual post.
+-   [x] Users can subscribe to a newsletter.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
