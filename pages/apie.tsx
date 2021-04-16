@@ -23,7 +23,6 @@ export interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ aboutDoc }) => {
   const { data } = aboutDoc;
-  console.log(data);
 
   return (
     <StyledAbout>

@@ -15,7 +15,6 @@ export interface CourseRecipesProps {
 export async function getStaticProps({ params }) {
   const client = Client();
   const course = params.course;
-  console.log(course);
   const postsData = await client.query(
     Prismic.Predicates.at("my.blog_post.pagal_tipa", params.course),
     {
@@ -48,7 +47,7 @@ export async function getStaticPaths() {
 const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, course }) => {
   const router = useRouter();
 
-  let capitalizedCourse;
+  let capitalizedCourse: string;
 
   if (course === "uzkandziai") course = "užkandžiai";
 
@@ -63,8 +62,6 @@ const CourseRecipes: React.FC<CourseRecipesProps> = ({ postsData, course }) => {
       </section>
     );
   }
-
-  console.log(postsData);
 
   return (
     <StyledRecipeListSection>
