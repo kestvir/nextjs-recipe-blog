@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre&display=swap"
             rel="stylesheet"
           />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <title>Ritos Virtuvėje</title>
         </Head>
         <body>
